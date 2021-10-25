@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://models/legless_man1.gd" type="Script" id=1]
+[ext_resource path="res://models/testbone.glb" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.1
+height = 0.8
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.0949334
+height = 0.759467
+
+[node name="testbone" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="Physical Bone Bone" type="PhysicalBone" parent="Armature/Skeleton" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+body_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+bone_name = "Bone"
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/Physical Bone Bone" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Physical Bone Bone001" type="PhysicalBone" parent="Armature/Skeleton" index="2"]
+transform = Transform( 0.812157, 0.573063, 0.109541, -0.573063, 0.748278, 0.334183, 0.109541, -0.334183, 0.936121, -0.0519955, 0.841374, -0.444346 )
+joint_type = 1
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32715e-08, -7.53973e-09, 0.474667 )
+body_offset = Transform( 1, -3.15167e-09, -1.0157e-08, 1.30464e-08, 1, -8.88429e-09, 5.41437e-09, -1.06715e-08, 1, -1.84504e-08, 1.17568e-08, -0.474667 )
+bone_name = "Bone.001"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/Physical Bone Bone001" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 2 )
