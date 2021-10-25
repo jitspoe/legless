@@ -10,9 +10,14 @@ config_version=4
 
 [application]
 
-config/name="Legless_godot"
+config/name="Legless"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="charcter ragdoll"
 
 [physics]
 
